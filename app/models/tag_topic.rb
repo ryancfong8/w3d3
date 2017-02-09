@@ -27,7 +27,7 @@ class TagTopic < ActiveRecord::Base
     .select('long_url, short_url, COUNT(visits.id), as number_of_visits')
     .limit(5)
 
-  # def popular_links
-  #   tagged_urls.sort_by { |url| url.num_clicks }.first(5)
-  # end
+  def popular_links
+    tagged_urls.sort_by { |url| url.num_clicks }.first(5)
+  end
 end
